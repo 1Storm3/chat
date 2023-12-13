@@ -61,7 +61,7 @@ const Chat = () => {
     <div className={styles.wrap}>
       <div className={styles.header}>
         <div className={styles.title}>{params.room}</div>
-        <div className={styles.users}>{users} Пользователи в комнате</div>
+        <div className={styles.users}> Пользователей в комнате: {users}</div>
         <button className={styles.left} onClick={leftRoom}>
           Покинуть комнату
         </button>
