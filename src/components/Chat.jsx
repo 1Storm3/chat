@@ -61,9 +61,9 @@ const Chat = () => {
     <div className={styles.wrap}>
       <div className={styles.header}>
         <div className={styles.title}>{params.room}</div>
-        <div className={styles.users}>{users} users in this room</div>
+        <div className={styles.users}>{users} Пользователи в комнате</div>
         <button className={styles.left} onClick={leftRoom}>
-          Left the room
+          Покинуть комнату
         </button>
       </div>
 
@@ -76,7 +76,7 @@ const Chat = () => {
           <input
             type="text"
             name="message"
-            placeholder="What do you want to say?"
+            placeholder="Напишите сообщение"
             value={message}
             onChange={handleChange}
             autoComplete="off"
@@ -94,7 +94,7 @@ const Chat = () => {
         </div>
 
         <div className={styles.button}>
-          <input type="submit" onSubmit={handleSubmit} value="Send a message" />
+          <input type="submit" onSubmit={handleSubmit} value="Отправить сообщение" />
         </div>
       </form>
     </div>
