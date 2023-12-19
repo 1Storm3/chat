@@ -6,6 +6,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: rgb(48, 43, 43);
+  display: flex;
+  justify-content: center;
 }
 
 h1,
@@ -53,7 +55,6 @@ li {
 }
 
 .container {
-  width: 1240px;
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -74,7 +75,9 @@ li {
   color: white;
 }
 .copyright a:hover {
-  color: rgb(2, 11, 85);
+  color: rgb(111, 3, 121);
+  font-family: Ubuntu;
+  font-weight: 700;
 }
 
 .copyright svg {
