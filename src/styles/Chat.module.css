@@ -34,6 +34,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .users {
@@ -44,8 +46,6 @@
   height: 65px;
   display: flex;
   align-items: center;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
 }
 
 .left {
