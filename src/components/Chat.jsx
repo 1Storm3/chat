@@ -60,8 +60,8 @@ const Chat = () => {
   return (
     <div className={styles.wrap}>
       <div className={styles.header}>
-        <div className={styles.title}>{params.room}</div>
-        <div className={styles.users}> Пользователей в комнате: {users}</div>
+        <div className={styles.title}>Комната: {params.room}</div>
+        <div className={styles.users}> Пользователей: {users}</div>
         <button className={styles.left} onClick={leftRoom}>
           Покинуть комнату
         </button>
@@ -94,7 +94,11 @@ const Chat = () => {
         </div>
 
         <div className={styles.button}>
-          <input type="submit" onSubmit={handleSubmit} value="Отправить сообщение" />
+          <input
+            type="submit"
+            onSubmit={handleSubmit}
+            value="Отправить сообщение"
+          />
         </div>
       </form>
     </div>
