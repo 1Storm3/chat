@@ -27,6 +27,8 @@
 }
 
 .header {
+  top: 0;
+  position: sticky;
   width: 100%;
   color: #fff;
   background: #333;
@@ -58,6 +60,8 @@
 }
 
 .form {
+  position: sticky;
+  bottom: 0;
   color: #fff;
   width: 100%;
   display: flex;

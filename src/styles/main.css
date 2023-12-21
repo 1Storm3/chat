@@ -8,6 +8,7 @@ body {
   color: rgb(48, 43, 43);
   display: flex;
   justify-content: center;
+  background-attachment: fixed;
 }
 
 h1,

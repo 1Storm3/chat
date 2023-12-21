@@ -95,7 +95,11 @@ const Chat = () => {
 
         <div className={styles.button}>
           <input
-            type="submit"
+            type="image"
+            width="24"
+            height="24"
+            src="https://img.icons8.com/material-sharp/24/sent.png"
+            alt="sent"
             onSubmit={handleSubmit}
             value="Отправить сообщение"
           />
