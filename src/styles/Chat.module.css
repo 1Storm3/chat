@@ -1,16 +1,22 @@
+@media (max-width: 430px) {
+  .header {
+    width: 100vw !important;
+  }
+}
+
 .wrap {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   color: #fff;
+  height: 100%;
 }
 
 .header {
   top: 0;
-  position: sticky;
-  width: 100%;
+  position: fixed;
+  width: 80vw;
   color: #fff;
   background: #333;
   display: flex;
@@ -83,6 +89,9 @@
   font-size: 18px;
   background: rgb(35, 35, 35);
   padding: 32px;
+  position: relative;
+  top: 65px;
+  z-index: -1;
 }
 
 .emoji {
