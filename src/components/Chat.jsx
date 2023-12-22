@@ -58,6 +58,10 @@ const Chat = () => {
 
   return (
     <div className={styles.wrap}>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      ></meta>
       <div className={styles.header}>
         <div className={styles.title}>Комната: {params.room}</div>
         <div className={styles.users}> Участников: {users}</div>
