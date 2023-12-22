@@ -1,8 +1,17 @@
 import React from "react";
-
+import { useEffect, useRef } from "react";
 import styles from "../styles/Messages.module.css";
 
 const Messages = ({ messages, name }) => {
+  const messagesRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   return (
     <div className={styles.messages}>
       {messages.map(({ user, message }, i) => {
@@ -12,8 +21,8 @@ const Messages = ({ messages, name }) => {
 
         return (
           <div key={i} className={`${styles.message} ${className}`}>
+            <div ref={messagesRef} />
             <span className={styles.user}>{user.name}</span>
-
             <div className={styles.text}>{message}</div>
           </div>
         );
