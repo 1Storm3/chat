@@ -1,3 +1,13 @@
+@media (max-width: 430px) {
+  .container {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+  .container div {
+    font-size: 12px;
+  }
+}
+
 body {
   background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-03/1614839383_62-p-fon-dlya-chata-69.png);
   font-size: 16px;
@@ -58,6 +68,7 @@ li {
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  width: 80vw;
 }
 
 .copyright {
@@ -85,4 +96,7 @@ li {
   height: 25px;
   width: 40px;
   padding-left: 15px;
+}
+#response {
+  display: flex;
 }

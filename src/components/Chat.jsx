@@ -54,14 +54,13 @@ const Chat = () => {
 
     setMessage("");
   };
-
   const onEmojiClick = ({ emoji }) => setMessage(`${message} ${emoji}`);
 
   return (
     <div className={styles.wrap}>
       <div className={styles.header}>
         <div className={styles.title}>Комната: {params.room}</div>
-        <div className={styles.users}> Пользователей: {users}</div>
+        <div className={styles.users}> Участников: {users}</div>
         <button className={styles.left} onClick={leftRoom}>
           Покинуть комнату
         </button>
@@ -95,6 +94,7 @@ const Chat = () => {
 
         <div className={styles.button}>
           <input
+            id="response"
             type="image"
             width="24"
             height="24"

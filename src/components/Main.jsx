@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useNavigate } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "../styles/Main.module.css";
@@ -11,13 +11,11 @@ const FIELDS = {
 
 const Main = () => {
   const { NAME, ROOM } = FIELDS;
-
   const [values, setValues] = useState({ [NAME]: "", [ROOM]: "" });
 
   const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };
-
   const handleClick = (e) => {
     const isDisabled = Object.values(values).some((v) => !v);
 
@@ -65,6 +63,9 @@ const Main = () => {
             </button>
           </Link>
         </form>
+        <Link className={styles.login} to={"/login"}>
+          <button type="submit">Авторизация</button>
+        </Link>
         <div className="copyright">
           Developed by{" "}
           <svg
