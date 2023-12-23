@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "../styles/RequestBD.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const RequestBD = () => {
   const [formName, setFormName] = useState("");
   const [formSurname, setFormSurname] = useState("");
 
   const SendRequest = () => {
-    fetch("http://127.0.0.1:5000/login/querry", {
+    fetch("http://127.0.0.1:5000/request/querry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,6 +22,7 @@ const RequestBD = () => {
   };
 
   const handleSubmit = (event) => {
+    alert("request send");
     event.preventDefault();
     SendRequest();
   };
@@ -34,7 +35,7 @@ const RequestBD = () => {
   };
   return (
     <div>
-      <h1>Введите данные</h1>
+      <h1 className={styles.head}>Введите данные</h1>
       <form onSubmit={handleSubmit}>
         <label>Имя</label>
 
