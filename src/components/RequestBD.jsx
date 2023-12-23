@@ -7,7 +7,7 @@ const RequestBD = () => {
   const [formSurname, setFormSurname] = useState("");
 
   const SendRequest = () => {
-    fetch("https://online-chatix.netlify.app/request", {
+    fetch("http://localhost:80/request", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
