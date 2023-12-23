@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/RequestBD.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const RequestBD = () => {
   const [formName, setFormName] = useState("");
@@ -22,9 +22,9 @@ const RequestBD = () => {
   };
 
   const handleSubmit = (event) => {
-    alert("request send");
     event.preventDefault();
     SendRequest();
+    alert("Запрос отправлен");
   };
 
   const handleChangeName = (event) => {
