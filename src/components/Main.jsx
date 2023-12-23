@@ -63,9 +63,9 @@ const Main = () => {
             </button>
           </Link>
         </form>
-        <Link to={"/login"}>
+        <Link to={"/request"}>
           <button type="submit" className={styles.login}>
-            Авторизация
+            Отправка запроса в БД
           </button>
         </Link>
         <div className="copyright">
