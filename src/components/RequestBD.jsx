@@ -7,7 +7,7 @@ const RequestBD = () => {
   const [formSurname, setFormSurname] = useState("");
 
   const SendRequest = () => {
-    fetch("http://localhost:80/request", {
+    fetch("https://chat-online-kjxa.onrender.com/request", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
