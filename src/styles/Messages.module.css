@@ -29,7 +29,8 @@
 }
 
 .user .text {
-  background: #968989;
+  background: none;
+  color: #ffffff6e;
 }
 
 .user .user {
