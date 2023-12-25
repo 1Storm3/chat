@@ -34,31 +34,32 @@ const RequestBD = () => {
     setFormSurname(event.target.value);
   };
   return (
-    <div>
+    <div className={styles.wrap}>
       <h1 className={styles.head}>Введите данные</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Имя</label>
+      <div className={styles.container}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            type="text"
+            name="userName"
+            value={formName}
+            onChange={handleChangeName}
+            className={styles.input}
+            placeholder="Имя"
+          />
 
-        <input
-          type="text"
-          name="userName"
-          value={formName}
-          onChange={handleChangeName}
-          className={styles.input}
-        />
-
-        <label>Фамилия</label>
-        <input
-          type="text"
-          surname="surName"
-          value={formSurname}
-          onChange={handleChangeSurname}
-          className={styles.input}
-        />
-        <button type="submit" className={styles.submit}>
-          Отправить!
-        </button>
-      </form>
+          <input
+            type="text"
+            surname="surName"
+            value={formSurname}
+            onChange={handleChangeSurname}
+            className={styles.input}
+            placeholder="Фамилия"
+          />
+          <button type="submit" className={styles.submit}>
+            Отправить!
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
