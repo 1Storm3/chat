@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import styles from "../styles/Messages.module.css";
 
-const Messages = ({ messages, name }) => {
+const Messages = ({ messages, name, time }) => {
   const messagesRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -24,6 +24,7 @@ const Messages = ({ messages, name }) => {
             <div ref={messagesRef} />
             <span className={styles.user}>{user.name}</span>
             <div className={styles.text}>{message}</div>
+            <span>{time}</span>
           </div>
         );
       })}

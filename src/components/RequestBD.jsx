@@ -35,8 +35,8 @@ const RequestBD = () => {
   };
   return (
     <div className={styles.wrap}>
-      <h1 className={styles.head}>Введите данные</h1>
-      <div className={styles.container}>
+      <div className={styles.containerDB}>
+        <h1 className={styles.head}>Введите данные</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
             type="text"
@@ -45,6 +45,8 @@ const RequestBD = () => {
             onChange={handleChangeName}
             className={styles.input}
             placeholder="Имя"
+            required
+            pattern="\S+.*"
           />
 
           <input
@@ -54,6 +56,8 @@ const RequestBD = () => {
             onChange={handleChangeSurname}
             className={styles.input}
             placeholder="Фамилия"
+            required
+            pattern="\S+.*"
           />
           <button type="submit" className={styles.submit}>
             Отправить!
