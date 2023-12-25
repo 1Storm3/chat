@@ -40,15 +40,3 @@
   border-radius: 20px;
   background: #1c1c1c;
 }
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.head {
-  position: absolute;
-  top: 32%;
-  left: 46%;
-  font-size: 20px;
-}
