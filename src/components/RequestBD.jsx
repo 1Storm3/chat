@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/RequestBD.module.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const RequestBD = () => {
   const [formName, setFormName] = useState("");
@@ -63,6 +64,9 @@ const RequestBD = () => {
             Отправить!
           </button>
         </form>
+        <Link to={"/"}>
+          <button className={styles.back}>Назад</button>
+        </Link>
       </div>
     </div>
   );
