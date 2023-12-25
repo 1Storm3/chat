@@ -7,7 +7,9 @@
     font-size: 12px;
   }
 }
-
+* {
+  margin: 0;
+}
 body {
   background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-03/1614839383_62-p-fon-dlya-chata-69.png);
   font-size: 16px;
@@ -68,6 +70,9 @@ li {
   margin: 0 auto;
   width: 80vw;
   height: 100vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .copyright {

@@ -7,7 +7,7 @@
   width: 100%;
   color: #fff;
 }
-input:focus {
+.input:focus {
   outline: 2px solid #ffffff;
   outline-offset: 3px;
   background-color: #ffffff1c;
@@ -32,13 +32,14 @@ input:focus {
   gap: 25px;
   border-radius: 20px;
   background: #1c1c1c;
+  width: 24vw;
 }
 .submit:hover {
   color: #000;
   background-color: #fff;
 }
-.containerDB {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+.containerDB h1 {
+  font-size: 24px;
+  padding-bottom: 12px;
+  text-align: center;
 }
