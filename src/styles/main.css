@@ -11,10 +11,9 @@
   margin: 0;
 }
 body {
-  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-03/1614839383_62-p-fon-dlya-chata-69.png);
+  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612169249_174-p-fon-dlya-intro-gacha-laif-fioletovogo-tsve-231.jpg);
   font-size: 16px;
   font-family: Rubik, Roboto, sans-serif;
-
   overflow-x: hidden;
   color: rgb(48, 43, 43);
   display: flex;
@@ -103,4 +102,15 @@ li {
 }
 #response {
   display: flex;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
 }

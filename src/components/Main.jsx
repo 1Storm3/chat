@@ -42,7 +42,7 @@ const Main = () => {
           </div>
           <div className={styles.group}>
             <input
-              type="text"
+              type="number"
               name="room"
               placeholder="Номер комнаты"
               value={values[ROOM]}
