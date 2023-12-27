@@ -68,7 +68,6 @@ li {
 .container {
   margin: 0 auto;
   width: 80vw;
-  height: 100vh;
   justify-content: center;
   display: flex;
   align-items: center;

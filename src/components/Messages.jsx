@@ -3,18 +3,17 @@ import { useEffect, useRef } from "react";
 import styles from "../styles/Messages.module.css";
 
 const Messages = ({ messages, name, time }) => {
+  console.log(time);
   const messagesRef = useRef(null);
-
   const scrollToBottom = () => {
     messagesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
   return (
     <div className={styles.messages}>
-      {messages.map(({ user, message }, i) => {
+      {messages.map(({ user, message, time }, i) => {
         const itsMe =
           user.name.trim().toLowerCase() === name.trim().toLowerCase();
         const className = itsMe ? styles.me : styles.user;
