@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import styles from "../styles/Messages.module.css";
 
 const Messages = ({ messages, name, time }) => {
-  console.log(time);
   const messagesRef = useRef(null);
   const scrollToBottom = () => {
     messagesRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -23,7 +22,7 @@ const Messages = ({ messages, name, time }) => {
             <div ref={messagesRef} />
             <span className={styles.user}>{user.name}</span>
             <div className={styles.text}>{message}</div>
-            <span>{time}</span>
+            <span className={styles.time}>{time}</span>
           </div>
         );
       })}
