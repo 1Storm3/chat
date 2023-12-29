@@ -41,7 +41,7 @@ const Messages = ({ messages, name, time, socket }) => {
   return (
     <div className={styles.messages} ref={messagesColumnRef}>
       {messageRecieved.map((msg, i) => (
-        <div key={i}>
+        <div key={i} className={`${styles.message} ${className}`}>
           <div>
             <span className={styles.user}>{msg.username}</span>
             <div className={styles.text}>{msg.message}</div>
