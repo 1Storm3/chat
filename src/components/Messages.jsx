@@ -43,9 +43,9 @@ const Messages = ({ messages, name, time, socket }) => {
       {messageRecieved.map((msg, i) => (
         <div key={i}>
           <div>
-            <span>{msg.username}</span>
-            <span>{msg.message}</span>
-            <span>{msg.time}</span>
+            <span className={styles.user}>{msg.username}</span>
+            <span className={styles.text}>{msg.message}</span>
+            <span className={styles.time}>{msg.time}</span>
           </div>
         </div>
       ))}
