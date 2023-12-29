@@ -8,19 +8,22 @@ const Messages = ({ messages, name, time }, { socket }) => {
   const messagesColumnRef = useRef(null);
 
   const messagesRef = useRef(null);
-  useEffect(() => {
-    socket.on("receive_message", (newMessages) => {
-      setMessagesReceived((state) => [
-        ...state,
-        {
-          message: newMessages.message,
-          username: newMessages.username,
-          time: newMessages.timedata,
-        },
-      ]);
-    });
-    return () => socket.off("receive_message");
-  }, [socket]);
+  useEffect(
+    (socket) => {
+      socket.on("receive_message", (newMessages) => {
+        setMessagesReceived((state) => [
+          ...state,
+          {
+            message: newMessages.message,
+            username: newMessages.username,
+            time: newMessages.timedata,
+          },
+        ]);
+      });
+      return () => socket.off("receive_message");
+    },
+    [socket]
+  );
   const scrollToBottom = () => {
     messagesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
