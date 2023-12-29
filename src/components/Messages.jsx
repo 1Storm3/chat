@@ -44,7 +44,7 @@ const Messages = ({ messages, name, time, socket }) => {
         <div key={i}>
           <div>
             <span className={styles.user}>{msg.username}</span>
-            <span className={styles.text}>{msg.message}</span>
+            <div className={styles.text}>{msg.message}</div>
             <span className={styles.time}>{msg.timedata}</span>
           </div>
         </div>
