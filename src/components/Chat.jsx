@@ -70,7 +70,12 @@ const Chat = () => {
       </div>
 
       <div className={styles.messages}>
-        <Messages messages={state} name={params.name} time={state} />
+        <Messages
+          messages={state}
+          name={params.name}
+          time={state}
+          socket={socket}
+        />
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit}>
