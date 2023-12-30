@@ -35,8 +35,9 @@ const Messages = ({ messages, name, time, socket }) => {
   }, [socket]);
 
   useEffect(() => {
-    messagesColumnRef.current.scrollBottom =
-      messagesColumnRef.current.scrollHeight;
+    if (messagesColumnRef.current) {
+      window.scrollTo(0, messagesColumnRef.current.offsetTop);
+    }
   }, [messageRecieved]);
 
   useEffect(() => {
