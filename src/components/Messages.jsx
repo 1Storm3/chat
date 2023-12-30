@@ -34,9 +34,11 @@ const Messages = ({ messages, name, time, socket }) => {
     return () => socket.off("last_100_messages");
   }, [socket]);
 
+  const scrollBotDB = () => {
+    messagesColumnRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   useEffect(() => {
-    messagesColumnRef.current.scrollTop =
-      messagesColumnRef.current.scrollHeight;
+    scrollBotDB();
   }, [messageRecieved]);
 
   useEffect(() => {
@@ -44,13 +46,14 @@ const Messages = ({ messages, name, time, socket }) => {
   }, [messages]);
 
   return (
-    <div className={styles.messages} ref={messagesColumnRef}>
+    <div className={styles.messages}>
       {messageRecieved.map((message, i) => (
         <div key={i} className={`${styles.messages} ${styles.user}`}>
           <div>
             <span className={styles.user}>{message.username}</span>
             <div className={styles.text}>{message.message}</div>
             <span className={styles.time}>{message.timedata}</span>
+            <div ref={messagesColumnRef} />
           </div>
         </div>
       ))}
