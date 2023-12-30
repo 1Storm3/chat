@@ -33,8 +33,9 @@ const Messages = ({ messages, name, time, socket }) => {
 
     return () => socket.off("last_100_messages");
   }, [socket]);
+
   useEffect(() => {
-    messagesColumnRef.current.scrollTop =
+    messagesColumnRef.current.scrollBottom =
       messagesColumnRef.current.scrollHeight;
   }, [messageRecieved]);
 
