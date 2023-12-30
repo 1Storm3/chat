@@ -25,7 +25,14 @@ const Main = () => {
   return (
     <div className={styles.wrap}>
       <div className={styles.container}>
-        <h1 className={styles.heading}>Онлайн-Чат</h1>
+        <h1 className={styles.heading}>
+          {" "}
+          <img
+            src="https://i.imgur.com/zE7QFXH.png"
+            width="120px"
+            height="10px"
+          />
+        </h1>
 
         <form className={styles.form}>
           <div className={styles.group}>

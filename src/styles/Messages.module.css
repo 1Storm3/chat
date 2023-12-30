@@ -31,12 +31,13 @@
 .user .text {
   background-color: rgb(40, 54, 80);
   color: #ebe3e3e5;
+  margin-top: 5px;
 }
 .div[text="Добро пожаловать"] {
   background: none;
 }
 .user .user {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .me {
