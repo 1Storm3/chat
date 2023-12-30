@@ -34,17 +34,20 @@ const Messages = ({ messages, name, time, socket }) => {
     return () => socket.off("last_100_messages");
   }, [socket]);
 
-  useEffect(() => {}, [messageRecieved]);
+  useEffect(() => {
+    messagesColumnRef.current.scrollTop =
+      messagesColumnRef.current.scrollHeight;
+  }, [messageRecieved]);
 
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
 
   return (
-    <div className={styles.messages} ref={messagesColumnRef}>
+    <div className={styles.messages}>
       {messageRecieved.map((msg, i) => (
         <div key={i} className={styles.message}>
-          <div>
+          <div ref={messagesColumnRef}>
             <span className={styles.user}>{msg.username}</span>
             <div className={styles.text}>{msg.message}</div>
             <span className={styles.time}>{msg.timedata}</span>
