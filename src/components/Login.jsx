@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../styles/RequestBD.module.css";
+import styles from "../styles/Login.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const RequestBD = () => {
+const Login = () => {
   const [formName, setFormName] = useState("");
   const [formSurname, setFormSurname] = useState("");
 
@@ -37,7 +37,7 @@ const RequestBD = () => {
   return (
     <div className={styles.wrap}>
       <div className={styles.containerDB}>
-        <h1 className={styles.head}>Введите данные</h1>
+        <h1 className={styles.head}>Авторизация</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
             type="text"
@@ -45,7 +45,7 @@ const RequestBD = () => {
             value={formName}
             onChange={handleChangeName}
             className={styles.input}
-            placeholder="Имя"
+            placeholder="Логин"
             required
             pattern="\S+.*"
           />
@@ -56,14 +56,17 @@ const RequestBD = () => {
             value={formSurname}
             onChange={handleChangeSurname}
             className={styles.input}
-            placeholder="Фамилия"
+            placeholder="Пароль"
             required
             pattern="\S+.*"
           />
           <button type="submit" className={styles.submit}>
-            Отправить!
+            Войти
           </button>
         </form>
+        <Link to={"/register"}>
+          <button className={styles.back}>Регистрация</button>
+        </Link>
         <Link to={"/"}>
           <button className={styles.back}>Назад</button>
         </Link>
@@ -72,4 +75,4 @@ const RequestBD = () => {
   );
 };
 
-export default RequestBD;
+export default Login;

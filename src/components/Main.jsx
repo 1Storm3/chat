@@ -70,11 +70,11 @@ const Main = () => {
             </button>
           </Link>
         </form>
-        <Link to={"/request"}>
+        {/* <Link to={"/login"}>
           <button type="submit" className={styles.login}>
-            Отправка запроса в БД
+            Авторизация
           </button>
-        </Link>
+        </Link> */}
         <div className="copyright">
           Developed by{" "}
           <svg
