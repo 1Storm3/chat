@@ -19,7 +19,11 @@ const Main = () => {
   const handleClick = (e) => {
     const isDisabled = Object.values(values).some((v) => !v);
 
-    if (isDisabled) e.preventDefault();
+    if (isDisabled) {
+      e.preventDefault();
+      // } else {
+      //   setShowPasswordForm(true);
+    }
   };
 
   return (
