@@ -26,9 +26,8 @@ const Main = () => {
     <div className={styles.wrap}>
       <div className={styles.container}>
         <h1 className={styles.heading}>
-          {" "}
           <img
-            src="https://i.imgur.com/zE7QFXH.png"
+            src="https://i.imgur.com/XcdwWvj.png"
             width="120px"
             height="10px"
           />
