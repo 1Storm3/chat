@@ -12,10 +12,13 @@ const Start = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:81/", {
-        password,
-        username,
-      });
+      const response = await axios.post(
+        "https://chat-online-kjxa.onrender.com/",
+        {
+          password,
+          username,
+        }
+      );
 
       if (response.data.message === "true") {
         localStorage.setItem("access_token", response.data.access_token);
