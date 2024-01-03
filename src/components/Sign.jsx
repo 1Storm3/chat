@@ -1,34 +1,46 @@
 import React from "react";
-import { useState, useNavigate } from "react";
-import { Link } from "react-router-dom";
-
-import styles from "../styles/Main.module.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Logout from "./Logout";
+import styles from "../styles/Sign.module.css";
 
 const FIELDS = {
   NAME: "name",
   ROOM: "room",
 };
 
-const Main = () => {
+const Sign = () => {
   const { NAME, ROOM } = FIELDS;
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    !!localStorage.getItem("access_token")
+  );
   const [values, setValues] = useState({ [NAME]: "", [ROOM]: "" });
-
+  const navigate = useNavigate();
   const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
   const handleClick = (e) => {
-    const isDisabled = Object.values(values).some((v) => !v);
+    // const isDisabled = Object.values(values).some((v) => !v);
+    // if (isDisabled) {
+    //   e.preventDefault();
+    // }
+    e.preventDefault();
+    const isAuthenticated = !!localStorage.getItem("access_token");
+    console.log(isAuthenticated);
 
-    if (isDisabled) {
-      e.preventDefault();
-      // } else {
-      //   setShowPasswordForm(true);
+    if (!isAuthenticated) {
+      navigate("/");
+    } else {
+      navigate(`/chat?name=${values[NAME]}&room=${values[ROOM]}`);
     }
   };
-
   return (
     <div className={styles.wrap}>
       <div className={styles.container}>
+        {isLoggedIn && <Logout onLogout={handleLogout} />}
         <h1 className={styles.heading}>
           <img
             src="https://i.imgur.com/XcdwWvj.png"
@@ -37,7 +49,7 @@ const Main = () => {
           />
         </h1>
 
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleClick}>
           <div className={styles.group}>
             <input
               type="text"
@@ -63,15 +75,9 @@ const Main = () => {
             />
           </div>
 
-          <Link
-            className={styles.group}
-            onClick={handleClick}
-            to={`/chat?name=${values[NAME]}&room=${values[ROOM]}`}
-          >
-            <button type="submit" className={styles.button}>
-              Вход
-            </button>
-          </Link>
+          <button type="submit" className={styles.button}>
+            Вход
+          </button>
         </form>
         {/* <Link to={"/login"}>
           <button type="submit" className={styles.login}>
@@ -99,4 +105,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Sign;

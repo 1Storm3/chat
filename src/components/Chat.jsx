@@ -9,8 +9,8 @@ import icon from "../images/emoji.svg";
 import styles from "../styles/Chat.module.css";
 import Messages from "./Messages";
 
-const socket = io.connect("https://chat-online-kjxa.onrender.com");
-// const socket = io.connect("http://localhost:81");
+// const socket = io.connect("https://chat-online-kjxa.onrender.com");
+const socket = io.connect("http://localhost:81");
 
 const Chat = () => {
   const { search } = useLocation();
@@ -39,7 +39,7 @@ const Chat = () => {
 
   const leftRoom = () => {
     socket.emit("leftRoom", { params });
-    navigate("/");
+    navigate("/sign");
   };
 
   const handleChange = ({ target: { value } }) => setMessage(value);
