@@ -19,7 +19,7 @@ const Login = () => {
       }),
     })
       .then((res) => res.json())
-      .catch((err) => console.log("error"));
+      .catch((err) => console.log("error", err));
   };
 
   const handleSubmit = (event) => {
@@ -64,12 +64,6 @@ const Login = () => {
             Войти
           </button>
         </form>
-        <Link to={"/register"}>
-          <button className={styles.back}>Регистрация</button>
-        </Link>
-        <Link to={"/"}>
-          <button className={styles.back}>Назад</button>
-        </Link>
       </div>
     </div>
   );

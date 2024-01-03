@@ -29,40 +29,42 @@ const Start = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.heading}>
-        <img
-          src="https://i.imgur.com/XcdwWvj.png"
-          width="120px"
-          height="10px"
-        />
-      </h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <input
-          type="name"
-          name="name"
-          placeholder="Имя пользователя"
-          className={styles.input}
-          autoComplete="off"
-          required
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Пароль"
-          className={styles.input}
-          autoComplete="off"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+    <div className={styles.wrap}>
+      <div className={styles.container}>
+        <h1 className={styles.heading}>
+          <img
+            src="https://i.imgur.com/XcdwWvj.png"
+            width="120px"
+            height="10px"
+          />
+        </h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="username"
+            placeholder="Логин"
+            className={styles.input}
+            autoComplete="off"
+            required
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Пароль"
+            className={styles.input}
+            autoComplete="off"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <button type="submit" className={styles.button}>
-          Sign
-        </button>
-      </form>
+          <button type="submit" className={styles.submit}>
+            Войти
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
