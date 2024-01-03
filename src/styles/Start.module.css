@@ -73,3 +73,8 @@
 .container {
   top: 50%;
 }
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+}

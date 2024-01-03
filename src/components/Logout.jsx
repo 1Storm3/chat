@@ -12,7 +12,7 @@ const Logout = ({ onLogout }) => {
 
   return (
     <button onClick={handleLogout} className={styles.logout}>
-      Exit
+      Выход
     </button>
   );
 };
