@@ -15,10 +15,13 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/register", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://chat-online-kjxa.onrender.com/register",
+        {
+          username,
+          password,
+        }
+      );
 
       if (response.status === 200) {
         navigate("/login");
