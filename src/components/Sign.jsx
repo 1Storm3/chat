@@ -23,6 +23,10 @@ const Sign = () => {
     setIsLoggedIn(false);
   };
   const handleClick = (e) => {
+    // const isDisabled = Object.values(values).some((v) => !v);
+    // if (isDisabled) {
+    //   e.preventDefault();
+    // }
     e.preventDefault();
     const isAuthenticated = !!localStorage.getItem("access_token");
     console.log(isAuthenticated);
@@ -72,7 +76,7 @@ const Sign = () => {
           </div>
 
           <button type="submit" className={styles.button}>
-            Вход в чат
+            Вход
           </button>
         </form>
         {/* <Link to={"/login"}>

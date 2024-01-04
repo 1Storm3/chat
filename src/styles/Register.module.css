@@ -28,3 +28,9 @@
   color: #ffffff;
   border-radius: 10px;
 }
+.heading {
+  font-size: 32px;
+  line-height: 48px;
+  text-align: center;
+  color: #000000;
+}

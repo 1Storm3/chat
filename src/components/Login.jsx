@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "../styles/Login.module.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, createContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "./configAxios";
+
+export const UserContext = createContext("");
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -26,13 +28,18 @@ const Login = () => {
       if (response.data.message === "true") {
         localStorage.setItem("access_token", response.data.access_token);
         navigate("/sign");
-      } else if (response.data.message === "false") {
+      } else {
         setErrorMessage("Пароль неверный");
         setUsername("");
         setPassword("");
       }
     } catch (error) {
-      console.error("error", error);
+      if (error.response && error.response.status === 401) {
+        setErrorMessage("Пароль или логин неверный!");
+        setPassword("");
+      } else {
+        console.error("error", error);
+      }
     }
   };
 
@@ -71,8 +78,25 @@ const Login = () => {
           <button type="submit" className={styles.submit}>
             Войти
           </button>
+          <Link to={"/"}>
+            <button className={styles.submit}>Назад</button>
+          </Link>
         </form>
-        {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
+        {errorMessage && (
+          <div
+            style={{
+              color: "black",
+              backgroundColor: "#ffe6e6",
+              padding: "10px",
+              border: "1px solid #ff4d4d",
+              borderRadius: "10px",
+              margin: "10px 0",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+            }}
+          >
+            {errorMessage}
+          </div>
+        )}
         <div className="copyright">
           Developed by{" "}
           <svg

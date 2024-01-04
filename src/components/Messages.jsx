@@ -4,7 +4,7 @@ import styles from "../styles/Messages.module.css";
 
 const Messages = ({ messages, name, time, socket }) => {
   const [messageRecieved, setMessagesReceived] = useState([]);
-
+  console.log(name);
   const messagesColumnRef = useRef(null);
 
   const messagesRef = useRef(null);

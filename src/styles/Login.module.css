@@ -87,3 +87,7 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.form a {
+  width: 100%;
+}
