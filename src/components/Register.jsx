@@ -20,7 +20,8 @@ const Register = () => {
         {
           username,
           password,
-        }
+        },
+        { headers: { "Access-Control-Allow-Origin": "*" } }
       );
 
       if (response.status === 200) {
