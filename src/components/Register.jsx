@@ -17,7 +17,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "https://chaoschatix.netlify.app/register",
+        "https://chat-online-kjxa.onrender.com/register",
         {
           username,
           password,
