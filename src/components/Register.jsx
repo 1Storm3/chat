@@ -21,7 +21,9 @@ const Register = () => {
           username,
           password,
         },
-        { headers: { "Access-Control-Allow-Origin": "*" } }
+        {
+          withCredentials: true,
+        }
       );
 
       if (response.status === 200) {
