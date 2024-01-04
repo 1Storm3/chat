@@ -72,7 +72,7 @@ const Sign = () => {
           </div>
 
           <button type="submit" className={styles.button}>
-            Вход
+            Вход в чат
           </button>
         </form>
         {/* <Link to={"/login"}>

@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-top: 20px;
+}
+.group {
+  min-width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.input {
+  background: rgb(48, 43, 43);
+  width: 100%;
+  line-height: 40px;
+  color: #fff;
+  text-indent: 20px;
+  font-size: 16px;
+}
+.button {
+  cursor: pointer;
+  width: 100%;
+  line-height: 40px;
+  background: #5fa307;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 10px;
+}

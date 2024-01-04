@@ -5,6 +5,7 @@ import Sign from "./Sign";
 import Chat from "./Chat";
 import Login from "./Login";
 import Start from "./Start";
+import Register from "./Register";
 
 const AppRoutes = () => (
   <Routes>
@@ -12,6 +13,7 @@ const AppRoutes = () => (
     <Route path="/sign" element={<Sign />} />
     <Route path="/chat" element={<Chat />} />
     <Route path="/login" element={<Login />} />
+    <Route path="/register" element={<Register />} />
   </Routes>
 );
 
