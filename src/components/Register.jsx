@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "./configAxios";
 
 const Register = () => {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
@@ -17,13 +17,13 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "https://chat-online-kjxa.onrender.com/register",
+        "https://chaoschatix.netlify.app/register",
         {
           username,
           password,
         }
       );
-
+      console.log(response.data, response.status);
       if (response.status === 200) {
         navigate("/login");
         setRegistrationSuccess(true);
