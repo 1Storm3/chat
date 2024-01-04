@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Start.module.css";
 import axios from "axios";
+import axiosInstance from "./configAxios";
 
 const Start = () => {
   const [password, setPassword] = useState("");
@@ -12,7 +13,7 @@ const Start = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post(
+      const response = await axiosInstance.post(
         "https://chat-online-kjxa.onrender.com/",
         // "http://localhost:81",
         {
