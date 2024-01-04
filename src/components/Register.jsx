@@ -21,9 +21,6 @@ const Register = () => {
         {
           username,
           password,
-        },
-        {
-          withCredentials: true,
         }
       );
 
