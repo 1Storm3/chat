@@ -1,6 +1,7 @@
 .button {
   cursor: pointer;
-  width: 100%;
+  width: 80vw;
+  max-width: 280px;
   line-height: 40px;
   background: #307220;
   font-size: 16px;
@@ -14,4 +15,16 @@
   line-height: 48px;
   text-align: center;
   color: #000000;
+}
+.copyright {
+  position: absolute;
+  bottom: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

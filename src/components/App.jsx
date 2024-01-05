@@ -1,9 +1,12 @@
 import React from "react";
 import AppRoutes from "./AppRoutes";
+import { AuthProvider } from "./useAuth";
 
 const App = () => (
   <div className="container">
-    <AppRoutes />
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
   </div>
 );
 

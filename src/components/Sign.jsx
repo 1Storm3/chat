@@ -3,13 +3,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logout from "./Logout";
 import styles from "../styles/Sign.module.css";
-
+import { useAuth } from "./useAuth";
 const FIELDS = {
   NAME: "name",
   ROOM: "room",
 };
 
 const Sign = () => {
+  const { signOut } = useAuth();
   const { NAME, ROOM } = FIELDS;
   const [isLoggedIn, setIsLoggedIn] = useState(
     !!localStorage.getItem("access_token")
@@ -21,6 +22,7 @@ const Sign = () => {
   };
   const handleLogout = () => {
     setIsLoggedIn(false);
+    signOut();
   };
   const handleClick = (e) => {
     // const isDisabled = Object.values(values).some((v) => !v);
