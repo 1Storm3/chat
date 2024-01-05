@@ -32,6 +32,7 @@ const Register = () => {
     } catch (error) {
       if (error.response.status === 400) {
         setExistUser("Пользователь с таким именем существует!");
+        setUsername("");
       } else {
         console.error("eror registration", error);
         setErrorMessage("Ошибка при регистрации,пожалуйста попробуйте ещё");
