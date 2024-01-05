@@ -27,7 +27,7 @@ const Register = () => {
       console.log(response.data, response.status);
       if (response.status === 200) {
         setRegistrationSuccess(true);
-        setTimeout(navigate("/login"), 2000);
+        setTimeout(navigate("/login"), 9000);
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
