@@ -11,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [existUser, setExistUser] = useState("");
 
   const handleRegistration = async (e) => {
     e.preventDefault();
@@ -25,8 +26,10 @@ const Register = () => {
       );
       console.log(response.data, response.status);
       if (response.status === 200) {
-        navigate("/login");
         setRegistrationSuccess(true);
+        setTimeout(navigate("/login"), 2000);
+      } else if (response.status === 400) {
+        setExistUser("Пользователь с таким именем существует!");
       }
     } catch (error) {
       console.error("eror registration", error);
@@ -72,6 +75,7 @@ const Register = () => {
         </Link>
       </form>
       {registrationSuccess && <p>Регистрация успешна!</p>}
+      {existUser && <p style={{ color: "red" }}>{existUser}</p>}
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     </div>
   );
