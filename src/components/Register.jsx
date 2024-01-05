@@ -12,13 +12,14 @@ const Register = () => {
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [existUser, setExistUser] = useState("");
-
+  const [redirectToLogin, setRedirectToLogin] = useState(false);
   const handleRegistration = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(
         "https://chat-online-kjxa.onrender.com/register",
+        // "http://localhost:81/register",
         {
           username,
           password,
@@ -27,7 +28,8 @@ const Register = () => {
       console.log(response.data, response.status);
       if (response.status === 200) {
         setRegistrationSuccess(true);
-        setTimeout(navigate("/login"), 9000);
+        setUsername("");
+        setPassword("");
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
@@ -39,6 +41,13 @@ const Register = () => {
       }
     }
   };
+  const closeSuccessMessage = () => {
+    setRegistrationSuccess(false);
+    setRedirectToLogin(true);
+  };
+  if (redirectToLogin) {
+    navigate("/login");
+  }
   return (
     <div>
       <h1 className={styles.heading}>
@@ -70,6 +79,7 @@ const Register = () => {
             required
           />
         </div>
+
         <button type="submit" className={styles.button}>
           Регистрация
         </button>
@@ -77,7 +87,14 @@ const Register = () => {
           <button className={styles.button}>Назад</button>
         </Link>
       </form>
-      {registrationSuccess && <p>Регистрация успешна!</p>}
+      {registrationSuccess && (
+        <div classname={styles.sucсessReg}>
+          <p className={styles.register}>Регистрация успешна!</p>
+          <button onClick={closeSuccessMessage} className={styles.login}>
+            Перейти на вход
+          </button>
+        </div>
+      )}
       {existUser && (
         <p
           style={{
