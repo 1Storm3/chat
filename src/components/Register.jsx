@@ -30,7 +30,7 @@ const Register = () => {
         setTimeout(navigate("/login"), 2000);
       }
     } catch (error) {
-      if (response.status === 400) {
+      if (error.response.status === 400) {
         setExistUser("Пользователь с таким именем существует!");
       } else {
         console.error("eror registration", error);
