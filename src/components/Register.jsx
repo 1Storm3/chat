@@ -78,8 +78,36 @@ const Register = () => {
         </Link>
       </form>
       {registrationSuccess && <p>Регистрация успешна!</p>}
-      {existUser && <p style={{ color: "red" }}>{existUser}</p>}
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+      {existUser && (
+        <p
+          style={{
+            color: "black",
+            backgroundColor: "#ffe6e6",
+            padding: "10px",
+            border: "1px solid #ff4d4d",
+            borderRadius: "10px",
+            margin: "10px 0",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          }}
+        >
+          {existUser}
+        </p>
+      )}
+      {errorMessage && (
+        <p
+          style={{
+            color: "black",
+            backgroundColor: "#ffe6e6",
+            padding: "10px",
+            border: "1px solid #ff4d4d",
+            borderRadius: "10px",
+            margin: "10px 0",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          }}
+        >
+          {errorMessage}
+        </p>
+      )}
     </div>
   );
 };
