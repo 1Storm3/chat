@@ -28,10 +28,11 @@ const Register = () => {
       if (response.status === 200) {
         setRegistrationSuccess(true);
         setTimeout(navigate("/login"), 2000);
-      } else if (response.status === 400) {
-        setExistUser("Пользователь с таким именем существует!");
       }
     } catch (error) {
+      if (response.status === 400) {
+        setExistUser("Пользователь с таким именем существует!");
+      }
       console.error("eror registration", error);
       setErrorMessage("Ошибка при регистрации,пожалуйста попробуйте ещё");
     }
