@@ -32,9 +32,10 @@ const Register = () => {
     } catch (error) {
       if (response.status === 400) {
         setExistUser("Пользователь с таким именем существует!");
+      } else {
+        console.error("eror registration", error);
+        setErrorMessage("Ошибка при регистрации,пожалуйста попробуйте ещё");
       }
-      console.error("eror registration", error);
-      setErrorMessage("Ошибка при регистрации,пожалуйста попробуйте ещё");
     }
   };
   return (
